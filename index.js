@@ -188,3 +188,13 @@ firstGameContainer.appendChild(topFundedGame);
 const secondFundedGame = document.createElement("div");
 secondFundedGame.innerHTML = `${secondGame.name}`;
 secondGameContainer.appendChild(secondFundedGame);
+
+// nav bar
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
